@@ -55,3 +55,10 @@ El sistema contará con los siguientes módulos:
                 con el  deseo de aprender todo lo relacionado con programacion, dado que simpre he sentido afinidad 
                 con este campo del conocimiento. por tal motivo tengo mucho deseo de poder desempeñarme como desarrollador
                 web en muy poco tiempo.
+
+● Nombre:Didier Alejandro Fajardo Annear
+ Documento 1.099.217.222
+ Rol Inicial:Analista
+ Presentacion:Soy estudiante de ingenieria de sistemas, actualmente trabajo como diseñador web y entre a este programa
+	      del MINTIC para afianzar mis conocimientos en el area de la programacion, especialmente en lo que concierne 
+	      al desarrollo web.
