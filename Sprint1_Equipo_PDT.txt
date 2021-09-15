@@ -40,5 +40,10 @@ El sistema contará con los siguientes módulos:
  Rol Inicial:DBA
  Presentacion:Soy Ingeniera industrial ingrese al curso de programacion porque me parece muy interesante aprender del tema y porque creo que todo ingeniero deberia tener conceptos basicos de programacion
 
-
+● Nombre: Sergio Clavijo Clavijo Beltrán
+  Documento: 1.012.404.699
+  Rol inicial: Desarrollador
+  Presentación: Soy tecnólogo en desarrollo de software, actualmente trabajo como desarrollador PHP, me interesé
+                bastante en el programa debido a su contenido actualizado, me gustaría poder aprender
+		nuevas y diferentes tecnologías para poder seguir avanzando en mi carrera como programador.
 
