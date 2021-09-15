@@ -47,3 +47,10 @@ El sistema contará con los siguientes módulos:
                 bastante en el programa debido a su contenido actualizado, me gustaría poder aprender
 		nuevas y diferentes tecnologías para poder seguir avanzando en mi carrera como programador.
 
+● Nombre: Rusbell Wbeimar Ruiz Portocarrero
+  Documento: 1.089.003.742
+  Rol inicial: Scrum Master
+  Presentación: Soy ingeniero electronico con residencia en la ciudad de Popayan Cauca, ingrese al programa MinTic 
+                con el  deseo de aprender todo lo relacionado con programacion, dado que simpre he sentido afinidad 
+                con este campo del conocimiento. por tal motivo tengo mucho deseo de poder desempeñarme como desarrollador
+                web en muy poco tiempo.
