@@ -62,3 +62,13 @@ El sistema contará con los siguientes módulos:
  Presentacion:Soy estudiante de ingenieria de sistemas, actualmente trabajo como diseñador web y entre a este programa
 	      del MINTIC para afianzar mis conocimientos en el area de la programacion, especialmente en lo que concierne 
 	      al desarrollo web.
+
+● Nombre: Andrés Medina López
+  Documento: 1.233.690.291
+  Rol inicial: Product Owner
+  Presentación: Soy estudiante de ingeniería civil, me interesé en el curso de programación ofertado por el MINTIC debido
+                a que es un campo muy importante, y a que está presente en todas las carreras, incluso permite conectarlas,
+                por la misma razón le aporta bastante a mi enfoque en ingeniería estructural y, por último, hay que 
+                considerar sus tantas salidas laborales que permitirán, en su momento, afianzar los conocimientos de 
+                manera práctica. 
+
