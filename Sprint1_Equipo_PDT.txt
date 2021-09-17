@@ -39,7 +39,7 @@ El sistema contará con los siguientes módulos:
  Documento 32.151.481
  Rol Inicial:DBA
  Presentacion:Soy Ingeniera industrial ingrese al curso de programacion porque me parece muy interesante aprender del tema
-              y porque creo que todo ingeniero deberia tener conceptos basicos de programacion
+              y porque creo que todo ingeniero deberia tener conceptos basicos de programacion,vivo en Caldas Antioquia.
 
 ● Nombre: Sergio Clavijo Clavijo Beltrán
   Documento: 1.012.404.699
