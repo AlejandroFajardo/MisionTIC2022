@@ -46,7 +46,7 @@ El sistema contará con los siguientes módulos:
   Rol inicial: Desarrollador
   Presentación: Soy tecnólogo en desarrollo de software, actualmente trabajo como desarrollador PHP, me interesé
                 bastante en el programa debido a su contenido actualizado, me gustaría poder aprender
-		nuevas y diferentes tecnologías para poder seguir avanzando en mi carrera como desarrollador full stack.
+		nuevas y diferentes tecnologías para poder seguir avanzando en mi carrera como desarrollador full-stack.
 
 ● Nombre: Rusbell Wbeimar Ruiz Portocarrero
   Documento: 1.089.003.742
