@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de usuarios</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/yeti/bootstrap.min.css" integrity="sha384-mLBxp+1RMvmQmXOjBzRjqqr0dP9VHU2tb3FK6VB0fJN/AOu7/y+CAeYeWJZ4b3ii" crossorigin="anonymous">
+</head>
+<body>
+    <h1 class="display-1 text-center">LISTA DE USUARIOS</h1>
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-6" id="users-container"></div>
+            <div class="col-md-6" id="formulario">
+                <div class="card">
+                    <div class="card-body">
+                        <form id="user-form" >
+                            <div class="form-group">
+                                <input type="text" id="user-state" class="form-control" placeholder="Estado de usuario" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input id="user-role" rows="3" class="form-control" placeholder="Rol del usuario"></input>
+                            </div>
+                            <button class="btn btn-primary" id="btn-user-form"></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FIREBASE -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-firestore.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBnjFiCsuDs2CFF2xHyBlvTlfZ3j1qkMq8",
+            authDomain: "crud-mt-2022.firebaseapp.com",
+            projectId: "crud-mt-2022",
+            storageBucket: "crud-mt-2022.appspot.com",
+            messagingSenderId: "1018603559623",
+            appId: "1:1018603559623:web:82b9c4a24bfa8e7af63ce2"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="userList.js"></script>
+</body>
+</html>

@@ -42,7 +42,7 @@
                 <input type="checkbox" value="remember-me"> Remember me
             </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" id="signInBtn" type="submit">Sign in</button>
         <button class="btn btn-lg btn-success btn-primary btn-block" id="login-google" type="button">Sign in with google</button>
         <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
     </form>
@@ -68,7 +68,6 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig)
         const auth = firebase.auth();
-        const fs = firebase.firestore();
     </script>
     <script src="main.js"></script>
 </body>
