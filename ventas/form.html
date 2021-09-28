@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="esp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../Logo.png">
+
+    <title>Editando venta</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/floating-labels/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../floating-labels.css" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">
+        <img src="../Logo.png" height="50" width="50">
+        PDT
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Inicio <span class="sr-only">(actual)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Servicios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Ventas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Usuarios</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main role="main" class="container">
+    <h2>Editando venta</h2>
+    <form>
+        <div class="form-group">
+            <label for="inputId">ID</label>
+            <input type="text" class="form-control" id="inputId" readonly>
+        </div>
+        <div class="form-group">
+            <label for="inputPrice">Valor total</label>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">$</span>
+                </div>
+                <input type="number" id="inputPrice" class="form-control" aria-describedby="basic-addon1" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="tableServices">Servicios</label>
+            <table id="tableServices" class="table table-sm">
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Valor unitario</th>
+                    <th>Cantidad</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <select id="inputService" class="form-control">
+                            <option selected disabled>Seleccione</option>
+                        </select>
+                    </td>
+                    <td>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon2">$</span>
+                            </div>
+                            <input type="number" id="inputUnitPrice" class="form-control"
+                                   aria-describedby="basic-addon2">
+                        </div>
+                    </td>
+                    <td>
+                        <input type="number" id="inputQuantity" class="form-control">
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger">x</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-primary">+</button>
+        </div>
+        <div class="form-group">
+            <label for="inputIdClient">Identificación cliente</label>
+            <input type="text" class="form-control" id="inputIdClient">
+        </div>
+        <div class="form-group">
+            <label for="inputClient">Nombre cliente</label>
+            <input type="text" class="form-control" id="inputClient">
+        </div>
+        <div class="form-group">
+            <label for="inputSeller">Vendedor</label>
+            <select id="inputSeller" class="form-control">
+                <option selected disabled>Seleccione</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button id="btnCancel" type="button" class="btn btn-secondary">Cancelar</button>
+    </form>
+</main>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"><\/script>')</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<!-- FIREBASE -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+ https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-firestore.js"></script>
+<script>
+    (function () {
+        document.getElementById('btnCancel').addEventListener('click', function (e) {
+            window.location.href = '/';
+        });
+    })();
+    // Your web app's Firebase configuration
+    let firebaseConfig = {
+        apiKey: "AIzaSyBnjFiCsuDs2CFF2xHyBlvTlfZ3j1qkMq8",
+        authDomain: "crud-mt-2022.firebaseapp.com",
+        projectId: "crud-mt-2022",
+        storageBucket: "crud-mt-2022.appspot.com",
+        messagingSenderId: "1018603559623",
+        appId: "1:1018603559623:web:82b9c4a24bfa8e7af63ce2"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig)
+    const fs = firebase.firestore();
+</script>
+</body>
+
+</html>
