@@ -71,6 +71,7 @@ userForm.addEventListener("submit", async (e) => {
     editStatus = false;
     id = "";
     document.getElementById("formulario").style.display = "none";
+    alert("Se edito correctamente");
   }
 
   userForm.reset();
