@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
                 <p>${user.role}</h3>
                 <p>${user.state}</h3>
                 <div>
-                    <button class="btn btn-secondary btn-edit" data-id="${doc.id}">Edit</button>
+                    <button class="btn btn-primary btn-edit" data-id="${doc.id}">Edit</button>
                 </div>
             </div>`;
 
