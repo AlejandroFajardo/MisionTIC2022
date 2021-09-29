@@ -81,7 +81,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="form_productos.css" rel="stylesheet">
+    <!--<link href="form_productos.css" rel="stylesheet">-->
 
     <!-- modal -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
@@ -111,9 +111,9 @@
                 <p class="lead">Ingrese la información del nuevo servicio </p>
             </div>
 
-            <div class="row g-5">
-                <div class="col-md-5 col-lg-4 order-md-last">
-                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <div class="row g-5 justify-content-center">
+                <div class="col-md-9 col-lg-8 order-md-last">
+                    <h4 class="d-flex justify-content-center align-items-center mb-3">
                         <span class="text-secondary">Resumen de la creación del servicio</span>
                     </h4>
                     <br>
@@ -187,48 +187,8 @@
 
         <hr class="my-4">
 
-        <button class="w-100 btn btn-primary btn-lg" type="submit">Crear nuevo servicio</button>
+        <button id="btnCrearServicio" class="w-100 btn btn-primary btn-lg" type="submit">Crear nuevo servicio</button>
     </form>
-</div>
-
-<div class="modal fade" id="ModalServicios" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Agregar servicio</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form id="FormNuevoServicio">
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="Servicio" class="col-form-label">Servicio:</label>
-                        <select id="Servicio" class="form-control">
-                            <option>Exámenes</option>
-                            <option>Cirugía</option>
-                            <option>Otros</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="Cantidad" class="col-form-label">Cantidad:</label>
-                        <input type="number" class="form-control" id="Cantidad">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="ValorUnitario" class="col-form-label">Valor unitario</label>
-                        <input type="number" class="form-control" id="ValorUnitario"></input>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button id="btnGuardarServicio" type="submit" class="btn btn-primary">Guardar</button>
-                </div>
-            </form>
-        </div>
-    </div>
 </div>
 
 <footer class="my-5 pt-5 text-muted text-center text-small">
@@ -244,6 +204,6 @@
 
 <script src="https://getbootstrap.com/docs/5.1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="form-validation.js"></script>
-<script src="ventas.js"></script>
+<script src="productos.js"></script>
 </body>
 </html>
