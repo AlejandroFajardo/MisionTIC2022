@@ -1,0 +1,249 @@
+<!--
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de servicios</title>
+
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    <link href="prueba.css" rel="stylesheet">
+</head>
+<body>
+    <form action="" method="POST" id="form">
+        <div class="form">
+            <h1>Registro</h1>
+            <br>
+            <br>
+
+            <div class="grupo">
+                <input type="text" name="" id="name" required><span class="barra"></span>
+                <label for="">Identificador</label>
+            </div>
+            <div class="grupo">
+                <input type="text" name="" id="name" required><span class="barra"></span>
+                <label for="">Descripción</label>
+            </div>
+            <div class="grupo">
+                <input type="text" name="" id="name" required><span class="barra"></span>
+                <label for="">Valor unitario</label>
+            </div>
+            <div class="grupo">
+                <input type="text" name="" id="name" required><span class="barra"></span>
+                <label for="">Estado</label>
+            </div>
+            <button type="submit">Registrar</button>
+        </div>
+
+        
+
+    </form>
+</body>
+</html>
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Checkout example · Bootstrap v5.1</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/checkout/">
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="form_productos.css" rel="stylesheet">
+
+    <!-- modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+    <script>
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').trigger('focus')
+        })
+    </script>
+
+</head>
+<body class="bg-light">
+
+
+<div class="container">
+    <form class="needs-validation" novalidate>
+        <main>
+            <div class="py-5 text-center">
+                <img class="d-block mx-auto mb-4" src="Logo_alternativo.png" alt="" width="72" height="57">
+                <h2>Registro de servicios</h2>
+                <p class="lead">Ingrese la información del nuevo servicio </p>
+            </div>
+
+            <div class="row g-5">
+                <div class="col-md-5 col-lg-4 order-md-last">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-secondary">Resumen de la creación del servicio</span>
+                    </h4>
+                    <br>
+
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div>
+                                <h6 class="my-0">Id del servicio</h6>
+                            </div>
+                            <span class="text-muted">Ingrese Id del servicio</span>
+                        </li>
+                    </ul>
+
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div>
+                                <h6 class="my-0">Descripción</h6>
+                            </div>
+                            <span class="text-muted">Ingrese descripción</span>
+                        </li>
+                    </ul>
+
+
+                    <ul class="list-group mb-3">
+
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div>
+                                <h6 class="my-0">Valor unitario</h6>
+
+                            </div>
+                            <span class="text-muted">Ingrese valor unitario</span>
+                        </li>
+                    </ul>
+                    
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+
+                        <div class="col-12">
+                        
+                            <label for="exampleFormControlSelect1">Estado</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>Disponible</option>
+                                <option>No disponible</option>
+                            </select>
+                        </div>
+                        </li>
+                    </ul>
+                        
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+
+                        <div class="col-12">
+                        
+                            <label for="exampleFormControlSelect1">Nombre del registrador</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>Isabel</option>
+                                <option>Sergio</option>
+                                <option>Rusbell</option>
+                                <option>Andres</option>
+                                <option>Alejandro</option>
+                            </select>
+                        </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </main>
+
+        
+
+        <hr class="my-4">
+
+        <button class="w-100 btn btn-primary btn-lg" type="submit">Crear nuevo servicio</button>
+    </form>
+</div>
+
+<div class="modal fade" id="ModalServicios" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar servicio</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="FormNuevoServicio">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="Servicio" class="col-form-label">Servicio:</label>
+                        <select id="Servicio" class="form-control">
+                            <option>Exámenes</option>
+                            <option>Cirugía</option>
+                            <option>Otros</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Cantidad" class="col-form-label">Cantidad:</label>
+                        <input type="number" class="form-control" id="Cantidad">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ValorUnitario" class="col-form-label">Valor unitario</label>
+                        <input type="number" class="form-control" id="ValorUnitario"></input>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button id="btnGuardarServicio" type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2017–2021 PDT</p>
+    <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="#">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+</footer>
+</div>
+
+
+<script src="https://getbootstrap.com/docs/5.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="form-validation.js"></script>
+<script src="ventas.js"></script>
+</body>
+</html>
