@@ -1,0 +1,32 @@
+
+.form{
+    width:640px;
+    height:500px;
+    background:#e6e6e6;
+    border-radius:8px;
+    box-shadow:0 0 40px -10px #000;
+    margin:calc(50vh - 100px) auto;
+    padding:20px 120px;
+    max-width:calc(100vw - 40px);
+    box-sizing:border-box;
+    font-family:'roboto';
+    position:relative}
+
+.container{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+input{width:100%;padding:0px;box-sizing:border-box;background:none;outline:none;resize:none;border:0;font-family:'Montserrat',sans-serif;transition:all .3s;border-bottom:2px solid #bebed2}
+
+.button{
+    font-family: 'roboto';
+    border: none;
+    display: block;
+    width:80%;
+    margin: 10px auto;
+    font-size: 16px;
+    cursor: pointer;
+}
