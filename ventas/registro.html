@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
-    <title>Checkout example · Bootstrap v5.1</title>
+    <title>Agregar venta</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/checkout/">
 
@@ -43,13 +41,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
-
-    <script>
-        $('#myModal').on('shown.bs.modal', function () {
-            $('#myInput').trigger('focus')
-        })
-    </script>
-
 </head>
 <body class="bg-light">
 
@@ -58,7 +49,7 @@
     <form class="needs-validation" novalidate>
         <main>
             <div class="py-5 text-center">
-                <img class="d-block mx-auto mb-4" src="Logo_alternativo.png" alt="" width="72" height="57">
+                <img class="d-block mx-auto mb-4" src="/imagenes/logo.png" alt="" width="72" height="57">
                 <h2>Registro de ventas</h2>
                 <p class="lead">ingrese los datos para gestionar una venta </p>
             </div>
@@ -70,14 +61,14 @@
                     </h4>
                     <br>
 
-                    <ul class="list-group mb-3">
+                    <!--<ul class="list-group mb-3">
                         <li class="list-group-item d-flex justify-content-between lh-sm">
                             <div>
                                 <h6 class="my-0">Id de la venta</h6>
                             </div>
                             <span class="text-muted">5</span>
                         </li>
-                    </ul>
+                    </ul>-->
 
                     <ul class="list-group mb-3">
                         <li class="list-group-item d-flex justify-content-between lh-sm">
@@ -85,14 +76,14 @@
                                 <h6 class="my-0">Cantidad</h6>
 
                             </div>
-                            <span class="text-muted">5</span>
+                            <span id="txtCantidadServicios" class="text-muted">0</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between lh-sm">
                             <div>
                                 <h6 class="my-0">Total</h6>
 
                             </div>
-                            <span class="text-muted">$10000</span>
+                            <span id="txtTotalVenta" class="text-muted">$0</span>
                         </li>
                     </ul>
 
@@ -146,9 +137,8 @@
             </div>
         </main>
 
-        <button id="btnServicios" type="button" class="btn btn-primary" data-toggle="modal"
-                data-target="#ModalServicios"
-                data-whatever="@mdo">Adicionar Servicios
+        <button id="btnServicios" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#ModalServicios">Adicionar Servicios
         </button>
         <div class="col-12">
             <br>

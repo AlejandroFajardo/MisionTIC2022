@@ -10,11 +10,14 @@ const tbody = tableServicios.querySelector('tbody');
 const formNuevoServicio = document.getElementById('FormNuevoServicio');
 const tituloModal = document.getElementById('tituloModal');
 const btnServicios = document.getElementById('btnServicios');
+const txtCantidadServicios = document.getElementById('txtCantidadServicios');
+const txtTotalVenta = document.getElementById('txtTotalVenta');
 
 //Declaración de variables
 let arrayServicios = [];
 let editandoServicio = false;
 let botonEditandoServicio = null;
+let valorTotalVenta = 0;
 
 //Evento click del botón
 btnGuardarServicio.addEventListener('click', function (evento) {
@@ -26,21 +29,26 @@ btnGuardarServicio.addEventListener('click', function (evento) {
     if (cantidad > 0) {
         if (editandoServicio) {
             let indice = botonEditandoServicio.dataset.indice;
+
+            valorTotalVenta -= arrayServicios[indice].cantidad * arrayServicios[indice].valorUnitario;
+
             arrayServicios[indice].nombreServicio = nombreServicio;
             arrayServicios[indice].cantidad = cantidad;
             arrayServicios[indice].valorUnitario = valorUnitario;
+
+            let nuevoValor = valorUnitario * cantidad;
+
+            valorTotalVenta += nuevoValor;
 
             let fila = botonEditandoServicio.closest('tr');
             fila.children[1].innerText = nombreServicio;
             fila.children[2].innerText = cantidad;
             fila.children[3].innerText = valorUnitario;
-            fila.children[4].innerText = valorUnitario * cantidad;
+            fila.children[4].innerText = nuevoValor;
 
             editandoServicio = false;
             indiceServicioEditando = null;
             formNuevoServicio.reset();
-
-            //modalServicios.hide(); //Oculta el modal
         } else {
             arrayServicios.push({
                 nombreServicio: nombreServicio,
@@ -57,7 +65,9 @@ btnGuardarServicio.addEventListener('click', function (evento) {
             let colValorUnitario = document.createElement('td');
             colValorUnitario.innerHTML = valorUnitario;
             let colValorTotal = document.createElement('td');
-            colValorTotal.innerHTML = valorUnitario * cantidad;
+            let total = valorUnitario * cantidad;
+            colValorTotal.innerHTML = total;
+            valorTotalVenta += total;
 
 
             let colEditar = document.createElement('td');
@@ -96,9 +106,11 @@ btnGuardarServicio.addEventListener('click', function (evento) {
             tbody.appendChild(fila); //Agregar la nueva fila al tbody de la tabla
 
             formNuevoServicio.reset(); //Resetea (borra) todos los valores del formulario
-
-            //modalServicios.hide(); //Oculta el modal
         }
+
+        actualizarTotales();
+
+        modalServicios.hide(); //Oculta el modal
     }
 });
 
@@ -110,6 +122,7 @@ btnServicios.addEventListener('click', function () {
 
 function borrarFila() {
     if (confirm('¿Está seguro de borrar este servicio?')) {
+        valorTotalVenta -= arrayServicios[this.dataset.indice].cantidad * arrayServicios[this.dataset.indice].valorUnitario;
         arrayServicios.splice(this.dataset.indice, 1);
         this.parentNode.parentNode.remove(); //Eliminar la fila
 
@@ -118,6 +131,7 @@ function borrarFila() {
         for (let i = 0; i < botones.length; i++) {
             botones[i].dataset.indice = i;
         }
+        actualizarTotales();
     }
 }
 
@@ -131,3 +145,9 @@ function editarFila() {
     txtValorUnitario.value = datos.valorUnitario;
     modalServicios.show();
 }
+
+function actualizarTotales() {
+    txtCantidadServicios.innerText = arrayServicios.length;
+    txtTotalVenta.innerText = '$' + valorTotalVenta;
+}
+
