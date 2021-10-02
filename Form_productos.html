@@ -1,10 +1,60 @@
+<!--
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de servicios</title>
 
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 
-<!DOCTYPE html>
+    
+    <link href="prueba.css" rel="stylesheet">
+</head>
+<body>
+    <form action="" method="POST" id="form">
+        <div class="form">
+            <h1>Registro</h1>
+            <br>
+            <br>
+
+            <div class="grupo">
+                <input type="text" name="" id="name" required><span class="barra"></span>
+                <label for="">Identificador</label>
+            </div>
+            <div class="grupo">
+                <input type="text" name="" id="name" required><span class="barra"></span>
+                <label for="">Descripción</label>
+            </div>
+            <div class="grupo">
+                <input type="text" name="" id="name" required><span class="barra"></span>
+                <label for="">Valor unitario</label>
+            </div>
+            <div class="grupo">
+                <input type="text" name="" id="name" required><span class="barra"></span>
+                <label for="">Estado</label>
+            </div>
+            <button type="submit">Registrar</button>
+        </div>
+
+        
+
+    </form>
+</body>
+</html>
+-->
+
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Registro de servicios</title>
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Checkout example · Bootstrap v5.1</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/checkout/">
 
@@ -31,7 +81,7 @@
 
 
     <!-- Custom styles for this template -->
-    <!--<link href="form_servicios.css" rel="stylesheet">-->
+    <!--<link href="form_productos.css" rel="stylesheet">-->
 
     <!-- modal -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
@@ -41,6 +91,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
+
+    <script>
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').trigger('focus')
+        })
+    </script>
+
 </head>
 <body class="bg-light">
 
@@ -49,7 +106,7 @@
     <form class="needs-validation" novalidate>
         <main>
             <div class="py-5 text-center">
-                <img class="d-block mx-auto mb-4" src="/imagenes/logo.png" alt="" width="72" height="57">
+                <img class="d-block mx-auto mb-4" src="Logo_alternativo.png" alt="" width="72" height="57">
                 <h2>Registro de servicios</h2>
                 <p class="lead">Ingrese la información del nuevo servicio </p>
             </div>
@@ -63,7 +120,7 @@
 
                     <ul class="list-group mb-3">
                         <li class="list-group-item d-flex">
-                            <div class="col-sm-12">
+                            <div class="col-sm-6">
                                 <label for="firstName" class="form-label">Id del servicio</label>
                                 <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
                                 <div class="invalid-feedback">
@@ -76,7 +133,7 @@
 
                     <ul class="list-group mb-3">
                         <li class="list-group-item d-flex justify-content-between lh-sm">
-                            <div class="col-sm-12">
+                            <div class="col-sm-6">
                                 <label for="firstName" class="form-label">Descripción</label>
                                 <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
                                 <div class="invalid-feedback">
@@ -88,7 +145,7 @@
                     </ul>
 
 
-                    <ul class="list-group mb-12">
+                    <ul class="list-group mb-3">
 
                         <li class="list-group-item d-flex justify-content-between lh-sm">
                             <div class="col-sm-6">
@@ -140,9 +197,8 @@
         
 
         <hr class="my-4">
-        <div class="col-md-12 mt-3 text-center">
-            <button id="btnCrearServicio" class="btn btn-primary btn-lg" type="submit">Crear nuevo servicio</button>
-        </div>
+
+        <button id="btnCrearServicio" class="w-100 btn btn-primary btn-lg" type="submit">Crear nuevo servicio</button>
     </form>
 </div>
 
@@ -159,6 +215,6 @@
 
 <script src="https://getbootstrap.com/docs/5.1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="form-validation.js"></script>
-<script src="servicios.js"></script>
+<script src="productos.js"></script>
 </body>
 </html>

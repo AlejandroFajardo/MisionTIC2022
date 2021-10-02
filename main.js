@@ -19,7 +19,7 @@ googleButton.addEventListener("click", (e) => {
     .then((result) => {
       console.log(result);
       alert("Correcto");
-      window.location.href = "/vistas/vista_usuario.html";
+      window.location.href = "./user-list.html";
     })
     .catch((err) => {
       alert("error");
@@ -35,35 +35,25 @@ signInForm.addEventListener("submit", async (e) => {
   const password = signInForm["inputPassword"].value;
   // Authenticate the User
   const users = await getUsers();
-  let login = false;
   users.forEach((user) => {
     if ((email == user.data().user) & (password == user.data().password)) {
       if (user.data().state == "Activo") {
         signInForm.reset();
         alert("Correcto");
-        if (user.data().role == "Administrador") {
-          window.location.href = "/vistas/vista_administrador.html";
-          login = true;
-        } else if (user.data().role == "Vendedor") {
-          window.location.href = "/vistas/vista_vendedor.html";
-          login = true;
-        } else {
-        }
+        window.location.href = "./user-list.html";
       }
     }
   });
-  if (!login) {
-    auth
-      .signInWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        // clear the form
-        signInForm.reset();
-        alert("Correcto");
-        window.location.href = "./user-list.html";
-      })
-      .catch((err) => {
-        signInForm.reset();
-        alert("El usuario no existe o esta inactivo");
-      });
-  }
+  auth
+    .signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // clear the form
+      signInForm.reset();
+      alert("Correcto");
+      window.location.href = "./user-list.html";
+    })
+    .catch((err) => {
+      signInForm.reset();
+      alert("El usuario no existe o esta inactivo");
+    });
 });

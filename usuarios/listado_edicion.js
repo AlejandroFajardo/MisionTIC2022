@@ -31,10 +31,10 @@ window.addEventListener("DOMContentLoaded", async (e) => {
       user.id = doc.id;
       usersContainer.innerHTML += `<div class="card card-body mt-2 border-primary">
                 <h3 class="h5">${user.user}</h3>
-                <p> > ${user.role}</h3>
-                <p> > ${user.state}</h3>
-                <div class="text-center">
-                    <button class="btn btn-primary btn-edit" data-id="${doc.id}">Editar</button>
+                <p>${user.role}</h3>
+                <p>${user.state}</h3>
+                <div>
+                    <button class="btn btn-primary btn-edit" data-id="${doc.id}">Edit</button>
                 </div>
             </div>`;
 
