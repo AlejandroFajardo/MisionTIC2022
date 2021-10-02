@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Consola administrador</title>
+
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.1/examples/checkout/"
+    />
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3rem;
+        }
+      }
+    </style>
+
+    <!-- modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-light">
+    <div class="container">
+      <form class="needs-validation" novalidate>
+        <main>
+          <div class="py-5 text-center">
+            <img
+              class="d-block mx-auto mb-4"
+              src="/imagenes/logo.png"
+              alt=""
+              width="72"
+              height="57"
+            />
+            <h2>Bienvenido administrador</h2>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card text-center">
+                <div class="card-header">
+                  <p class="mb-0 font-weight-bold">Modulos disponibles</p>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    Modulo de administracion de servicios
+                  </h5>
+                  <p>En este modulo se pueden agregar y editar servicios</p>
+                  <a
+                    href="/servicios/form_servicios.html"
+                    class="btn btn-primary"
+                    >Administrar</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-12">
+              <div class="card text-center">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    Modulo de administracion de usuarios
+                  </h5>
+                  <p>En este modulo se pueden editar usuarios</p>
+                  <a
+                    href="/usuarios/listado_edicion.html"
+                    class="btn btn-primary"
+                    >Administrar</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="card text-center">
+                <div class="card-body">
+                  <h5 class="card-title">Modulo de ventas</h5>
+                  <p>En este modulo se pueden registrar y editar las ventas</p>
+                  <a href="/ventas/registro.html" class="btn btn-primary"
+                    >Administrar</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 mt-3 text-center">
+              <a href="/login.html" class="btn btn-danger btn-lg">Salir</a>
+            </div>
+          </div>
+        </main>
+      </form>
+    </div>
+
+    <footer class="my-4 pt-2 text-muted text-center text-small">
+      <p class="mb-1">&copy; 2017–2021 PDT</p>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="#">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>

@@ -46,15 +46,11 @@
 </html>
 -->
 
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
-    <title>Checkout example · Bootstrap v5.1</title>
+    <title>Registro de servicios</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/checkout/">
 
@@ -81,7 +77,7 @@
 
 
     <!-- Custom styles for this template -->
-    <!--<link href="form_productos.css" rel="stylesheet">-->
+    <!--<link href="form_servicios.css" rel="stylesheet">-->
 
     <!-- modal -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
@@ -91,13 +87,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
-
-    <script>
-        $('#myModal').on('shown.bs.modal', function () {
-            $('#myInput').trigger('focus')
-        })
-    </script>
-
 </head>
 <body class="bg-light">
 
@@ -106,7 +95,7 @@
     <form class="needs-validation" novalidate>
         <main>
             <div class="py-5 text-center">
-                <img class="d-block mx-auto mb-4" src="Logo_alternativo.png" alt="" width="72" height="57">
+                <img class="d-block mx-auto mb-4" src="/imagenes/logo.png" alt="" width="72" height="57">
                 <h2>Registro de servicios</h2>
                 <p class="lead">Ingrese la información del nuevo servicio </p>
             </div>
@@ -197,8 +186,9 @@
         
 
         <hr class="my-4">
-
-        <button id="btnCrearServicio" class="w-100 btn btn-primary btn-lg" type="submit">Crear nuevo servicio</button>
+        <div class="col-md-12 mt-3 text-center">
+            <button id="btnCrearServicio" class="btn btn-primary btn-lg" type="submit">Crear nuevo servicio</button>
+        </div>
     </form>
 </div>
 
@@ -215,6 +205,6 @@
 
 <script src="https://getbootstrap.com/docs/5.1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="form-validation.js"></script>
-<script src="productos.js"></script>
+<script src="servicios.js"></script>
 </body>
 </html>
