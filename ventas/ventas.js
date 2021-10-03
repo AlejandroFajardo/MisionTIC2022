@@ -151,3 +151,11 @@ function actualizarTotales() {
     txtTotalVenta.innerText = '$' + valorTotalVenta;
 }
 
+
+const btnCrearServicio = document.getElementById('btnGuardarVenta');
+
+btnCrearServicio.addEventListener('click', function (evento) {
+    evento.preventDefault();
+
+    alert('La venta se agrego de forma correcta');
+});
