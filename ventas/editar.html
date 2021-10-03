@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Modificar venta</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/checkout/">
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+
+    <!-- modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</head>
+<body class="bg-light">
+
+
+<div class="container">
+    <form class="needs-validation" novalidate>
+        <main>
+            <div class="py-5 text-center">
+                <img class="d-block mx-auto mb-4" src="/imagenes/logo.png" alt="" width="72" height="57">
+                <h2>Edición de venta</h2>
+                <p class="lead">Ingrese los datos para modificar la venta</p>
+            </div>
+
+            <div class="row g-5">
+                <div class="col-md-5 col-lg-4 order-md-last">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-secondary">Resumen de la venta</span>
+                    </h4>
+                    <br>
+
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div>
+                                <h6 class="my-0">Id de la venta</h6>
+                            </div>
+                            <span class="text-muted">5</span>
+                        </li>
+                    </ul>
+
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div>
+                                <h6 class="my-0">Cantidad</h6>
+
+                            </div>
+                            <span id="txtCantidadServicios" class="text-muted">0</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div>
+                                <h6 class="my-0">Valor total</h6>
+
+                            </div>
+                            <span id="txtTotalVenta" class="text-muted">$0</span>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-md-7- col-lg-8">
+                    <h4 class="mb-3">Datos del cliente</h4>
+                    <div class="row g-2">
+                        <div class="col-sm-6">
+                            <label for="NombreCliente" class="form-label">Nombre completo del cliente</label>
+                            <input type="text" class="form-control" id="NombreCliente" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Debe ingresar un nombre
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="Documento" class="form-label">Documento del cliente</label>
+                            <input type="text" class="form-control" id="Documento" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Debe ingresar el documento del cliente
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="Fecha" class="form-label">Fecha</label>
+                            <input type="date" class="form-control" id="Fecha">
+                            <div class="invalid-feedback">
+                                Por favor ingrese una fecha válida
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="NombreVendedor">Nombre del Vendedor</label>
+                            <select class="form-control" id="NombreVendedor">
+                                <option>Isabel</option>
+                                <option>Sergio</option>
+                                <option>Rusbell</option>
+                                <option>Andres</option>
+                                <option>Alejandro</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <br/>
+
+        <button id="btnServicios" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#ModalServicios">Adicionar servicios
+        </button>
+
+        <div class="col-12">
+            <br>
+            <table id="Servicios" class="table">
+                <thead class="thead-secondary">
+                <tr class="text-c">
+                    <th scope="col">ID servicio</th>
+                    <th scope="col">Servicio</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Valor unitario</th>
+                    <th scope="col">Valor total</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Borrar</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+        <hr class="my-4">
+
+        <button id="btnAgregarVenta" class="w-100 btn btn-primary btn-lg" type="submit">Editar venta</button>
+    </form>
+</div>
+
+<div class="modal fade" id="ModalServicios" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tituloModal">Agregar servicio</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="FormNuevoServicio">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="Servicio" class="col-form-label">Servicio:</label>
+                        <select id="Servicio" class="form-control">
+                            <option>Exámenes</option>
+                            <option>Cirugía</option>
+                            <option>Otros</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Cantidad" class="col-form-label">Cantidad:</label>
+                        <input type="number" class="form-control" id="Cantidad">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ValorUnitario" class="col-form-label">Valor unitario</label>
+                        <input type="number" class="form-control" id="ValorUnitario"></input>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button id="btnGuardarServicio" type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2017–2021 PDT</p>
+    <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="#">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+</footer>
+</div>
+
+
+<script src="https://getbootstrap.com/docs/5.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="form-validation.js"></script>
+<script src="ventas.js"></script>
+</body>
+</html>
