@@ -12,6 +12,7 @@ const tituloModal = document.getElementById('tituloModal');
 const btnServicios = document.getElementById('btnServicios');
 const txtCantidadServicios = document.getElementById('txtCantidadServicios');
 const txtTotalVenta = document.getElementById('txtTotalVenta');
+const btnAgregarVenta = document.getElementById('btnAgregarVenta');
 
 //Declaración de variables
 let arrayServicios = [];
@@ -118,6 +119,10 @@ btnServicios.addEventListener('click', function () {
     tituloModal.innerText = 'Agregar servicio';
     formNuevoServicio.reset(); //Límpia los campos
     editandoServicio = false;
+});
+
+btnAgregarVenta.addEventListener('click', function () {
+    alert('La venta se agregó de forma correcta');
 });
 
 function borrarFila() {
