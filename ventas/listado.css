@@ -60,3 +60,12 @@ input[type=button], input[type=submit], input[type=reset] {
     cursor: pointer;
     border-radius: 12px
   }
+  
+  select {
+    width: 100%;
+    padding: 16px 20px;
+    border:seashell;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+  }
+
