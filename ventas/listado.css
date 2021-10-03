@@ -49,3 +49,14 @@ img {
   display: block;
   margin : 0 auto;
 }
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 4px 12px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px
+  }

@@ -1,56 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="listado.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="listado.css" rel="stylesheet">
 </head>
 <body>
-  <img  src="/imagenes/logo.png" alt="" width="72" height="57">
-<h2> Busqueda de ventas</h2>
+  <img src="/imagenes/logo.png" alt="" width="72" height="57">
+  <h2> Busqueda de ventas</h2>
 
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar por Id_venta" title="Type in a name">
-    <input type="text" id="myInput1" onkeyup="myFunction_1()" placeholder="Buscar por Documento" title="Type in a name">
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar por Id_venta" title="Type in a name">
+  <input type="text" id="myInput1" onkeyup="myFunction_1()" placeholder="Buscar por Documento" title="Type in a name">
 
-<br>
-<table  id="myTable">
-  <tr class="header">
-    <th style="width:10%;">Id_venta</th>  
-    <th style="width:30%;">Nombre completo del cliente</th>
-    <th style="width:20%;">Documento del cliente</th>
-    <th style="width:20%;">Email</th>
-    <th style="width:20%;">Nombre del Vendedor</th>
-    <th style="width:20%;">Servicios</th>
-   
+  <br>
+  <table id="myTable">
+    <tr class="header">
+      <th style="width:10%;">Id_venta</th>
+      <th style="width:30%;">Nombre completo del cliente</th>
+      <th style="width:15%;">Documento del cliente</th>
+      <th style="width:15%;">Nombre del Vendedor</th>
+      <th style="width:10%;">Valor facturador</th>
+      <th style="width:10%;">Servicios</th>
+      <th style="width:10%;"> Editar</th>
 
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>Juan Perez</td>
-    <td>123456</td>
-    <td>jua.perez@gmail.com</td>
-    <td>sergio</td>
-    <td>Cirugia</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>Maria</td>
-    <td>1456</td>
-    <td>maria.perez@gmail.com</td>
-    <td>Alejandro</td>
-    <td>examenes</td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>Carlos</td>
-    <td>14566</td>
-    <td>maria.perez@gmail.com</td>
-    <td>Andres</td>
-    <td>examenes</td>
-  </tr>
 
-</table>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Juan Perez Correa</td>
+      <td>123456</td>
+      <td>sergio </td>
+      <td>100000</td>
+      <td>3</td>
+      <td><input type="button"></td>
 
-<script src="listado.js"></script>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Maria Gomez Taborda</td>
+      <td>1456</td>
+      <td>Alejandro</td>
+      <td>2000000</td>
+      <td>4</td>
+      <td><input type="button"></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Carlos German Diaz Cardona</td>
+      <td>14566</td>
+      <td>Andres </td>
+      <td>5000000</td>
+      <td>6</td>
+      <td><input class=botton type="button"></td>
+    </tr>
+
+  </table>
+
+  <script src="listado.js"></script>
 
 </body>
 </html>
