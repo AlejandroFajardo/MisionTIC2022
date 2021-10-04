@@ -8,23 +8,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/pulse/bootstrap.min.css">
 
     <style>
-
-        form{
-            margin: 0 auto;
-            text-align: center;
-            
-        }
         input{
             padding: 20px;
             margin:0px;
             margin-top: 20px;
-        }
-        #descripcion-servicio{
-            height: 100px;
-            
-        }
-        #atributos-Servicio{
-            /* display: none; */
         }
         
 
@@ -32,38 +19,35 @@
     </style>
 </head>
 <body>
+    <div>
+        <form class="needs-validation" novalidate>
+            <main>
+                <div class="py-5 text-center">
+                    <img class="d-block mx-auto mb-4" src="/imagenes/logo.png" alt="" width="72" height="57">
+                    <h2>Lista de servicios</h2>
+                    
+                </div>
+            </main>
+    
+        </form>        
+    </div>
+
     <div class="container p-4">
         <div class="row">
             <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <form id="buscar-form">
-                            <div class="form-group">
-                                <!-- <div>
-                                    <label for="">seleccione el filtro: </label>
-                                    <select name="filtro-servicio" id="filtro-servicio">
-                                        <option value="Id">Id Servicio</option>
-                                        <option value="descripcion">Descripcion</option>
-                                    </select>
-                                </div> -->
-                                <div>
-                                    <input type="text" id="id-servicio" class="form-control" placeholder="Id servivio" autofocus>
-                                </div>
-                                <div>
-                                    <input type="text" id="descripcion-servicio" class="form-control" placeholder="Descripcion del servivio">
-                                </div>
-                    
-                            </div>
-                            <button class="btn  btn-primary" id="btn-buscar">
-                                Buscar
-                            </button>
-                            </div>
-                        </form>
+                <form id="buscar-form">
+                    <div class="form-group">
+                        <label for="">Filtro de busqueda: </label>
+                        <input type="text" id="id-servicio" class="form-control" placeholder="Ingrese Id del servivio o descripcion" autofocus>                
                     </div>
-                </div>
+                        <button bacgroudcolor="red" class="btn  btn-primary" id="btn-buscar">
+                            Buscar
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
-        <div class="col-12">
+        <div class="container">
             <br>
             <table id="atributos-Servicio" class="table">
                 <thead class="thead-secondary">
@@ -82,7 +66,7 @@
 
                 </tbody>
             </table>
-    </div>
+        </div>
 
         <!-- FIREBASE -->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -108,4 +92,13 @@
     <script src="buscar.js"></script>
 
 </body>
+<footer class="my-4 pt-2 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2017–2021 PDT</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
 </html>
