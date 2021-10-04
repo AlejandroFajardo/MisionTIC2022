@@ -1,78 +1,192 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="listado.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Lista de ventas</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/checkout/">
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+
+    <!-- modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
 </head>
-<body>
-  <img src="/imagenes/logo.png" alt="" width="72" height="57">
-  <h2> Búsqueda de ventas</h2>
-
-  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar por ID de venta" title="Type in a name">
-  <input type="text" id="myInput1" onkeyup="myFunction_1()" placeholder="Buscar por documento de cliente" title="Type in a name">
-  <input type="text" id="myInput1" onkeyup="myFunction_1()" placeholder="Buscar por nombre de cliente" title="Type in a name">
-
-  <br>
-  <table id="myTable">
-    <tr class="header">
-      <th style="width:10%;">ID venta</th>
-      <th style="width:30%;">Nombre completo del cliente</th>
-      <th style="width:15%;">Documento del cliente</th>
-      <th style="width:15%;">Nombre del Vendedor</th>
-      <th style="width:10%;">Valor facturador</th>
-      <th style="width:5%;">Servicios</th>
-      <th style="width:20%;">Estado</th>
-      <th style="width:10%;"> Editar</th>
+<body class="bg-light">
 
 
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>Juan Perez Correa</td>
-      <td>123456</td>
-      <td>sergio </td>
-      <td>100000</td>
-      <td>3</td>
-      <td><label for="SelEstado"></label>
-        <select id="SelEstado" name="Estado">
-          <option value="proceso">En proceso</option>
-          <option value="cancelada ">Cancelada </option>
-          <option value="entregada">Entregada</option></td>
-      <td><input type="button"></td>
+<div>
+    <form class="needs-validation" novalidate>
+        <main>
+            <div class="py-5 text-center">
+                <img class="d-block mx-auto mb-4" src="/imagenes/logo.png" alt="" width="72" height="57">
+                <h2>Listado de ventas</h2>
 
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Maria Gomez Taborda</td>
-      <td>1456</td>
-      <td>Alejandro</td>
-      <td>2000000</td>
-      <td>4</td>
-      <td><label for="SelEstado"></label>
-        <select id="SelEstado" name="Estado">
-          <option value="proceso">En proceso</option>
-          <option value="cancelada ">Cancelada </option>
-          <option value="entregada">Entregada</option></td>
-      <td><input type="button"></td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Carlos German Diaz Cardona</td>
-      <td>14566</td>
-      <td>Andres </td>
-      <td>5000000</td>
-      <td>6</td>
-      <td><label for="SelEstado"></label>
-        <select id="SelEstado" name="Estado">
-          <option value="proceso">En proceso</option>
-          <option value="cancelada ">Cancelada </option>
-          <option value="entregada">Entregada</option></td>
-      <td><input class=botton type="button"></td>
-    </tr>
+            </div>
+        </main>
 
-  </table>
+    </form>
+</div>
 
-  <script src="listado.js"></script>
+<!--Filtro de busqueda-->
 
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-6">
+            <form id="buscar-form">
+                <div class="form-group">
+                    <label for="">Filtro de busqueda: </label>
+                    <input type="text" id="id-servicio" class="form-control" placeholder="Ingrese Id del servivio o descripcion" autofocus>
+                </div>
+                <button class="btn  btn-primary" id="btn-buscar">
+                    Buscar
+                </button>
+        </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <div class="container">
+        <table id="myTable" class="table table-hover table-striped">
+            <tr class="header">
+                <th>ID venta</th>
+                <th>Nombre completo del cliente</th>
+                <th>Documento del cliente</th>
+                <th>Nombre del Vendedor</th>
+                <th>Valor facturador</th>
+                <th>Servicios</th>
+                <th style="width: 15%">Estado</th>
+                <th>Editar</th>
+                <th>Borrar</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Juan Perez Correa</td>
+                <td>123456</td>
+                <td>sergio </td>
+                <td>100000</td>
+                <td>3</td>
+                <td><label for="SelEstado"></label>
+                    <select id="SelEstado" name="Estado">
+                        <option value="proceso">En proceso</option>
+                        <option value="cancelada ">Cancelada </option>
+                        <option value="entregada">Entregada</option></td>
+                <td>
+                    <button id="btnEditarServicio" class="btn btn-primary " type="submit">Editar</button>
+                </td>
+                <td><button id="btnBorrarServicio" type="button" class="btn btn-danger">X</button></td>
+
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Maria Gomez Taborda</td>
+                <td>1456</td>
+                <td>Alejandro</td>
+                <td>2000000</td>
+                <td>4</td>
+                <td><label for="SelEstado"></label>
+                    <select id="SelEstado" name="Estado">
+                        <option value="proceso">En proceso</option>
+                        <option value="cancelada ">Cancelada </option>
+                        <option value="entregada">Entregada</option></td>
+                <td>
+                    <button id="btnEditarServicio" class="btn btn-primary " type="submit">Editar</button>
+                </td>
+                <td><button id="btnBorrarServicio" type="button" class="btn btn-danger">X</button></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Carlos German Diaz Cardona</td>
+                <td>14566</td>
+                <td>Andres </td>
+                <td>5000000</td>
+                <td>6</td>
+                <td><label for="SelEstado"></label>
+                    <select id="SelEstado" name="Estado">
+                        <option value="proceso">En proceso</option>
+                        <option value="cancelada ">Cancelada </option>
+                        <option value="entregada">Entregada</option></td>
+                <td>
+                    <button id="btnEditarServicio" class="btn btn-primary " type="submit">Editar</button>
+                </td>
+                <td><button id="btnBorrarServicio" type="button" class="btn btn-danger">X</button></td>
+            </tr>
+
+        </table>
+    </div>
+
+    <!--
+        Tabla De rusbell
+
+    <div class="container">
+        <div class="col-12">
+            <br>
+            <table id="atributos-Servicio" class="table">
+                <thead class="thead-secondary">
+                <tr class="text-c">
+                    <th scope="col">Id Servicio</th>
+                    <th scope="col">Servicio</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Valor Unitario</th>
+                    <th scope="col">Valor total</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Borrar</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div> -->
+</div>
+
+
+
+<footer class="my-4 pt-2 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2017–2021 PDT</p>
+    <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="#">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+</footer>
+</div>
+
+
+<script src="https://getbootstrap.com/docs/5.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="listado.js"></script>
 </body>
 </html>
