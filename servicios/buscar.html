@@ -4,8 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>proyecto CRUD</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/pulse/bootstrap.min.css">
+    <title>Editar Servicio</title>
+
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/checkout/">
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 
     <style>
         input{
@@ -13,10 +21,22 @@
             margin:0px;
             margin-top: 20px;
         }
-        
-
-
+        button{
+            background-color:rgb(91, 91, 219);
+            border: 0px;
+        }
     </style>
+
+
+    <!-- modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
 </head>
 <body>
     <div>
@@ -40,24 +60,24 @@
                         <label for="">Filtro de busqueda: </label>
                         <input type="text" id="id-servicio" class="form-control" placeholder="Ingrese Id del servivio o descripcion" autofocus>                
                     </div>
-                        <button bacgroudcolor="red" class="btn  btn-primary" id="btn-buscar">
+                        <button class="btn btn btn-info" id="btn-buscar">
                             Buscar
                         </button>
                     </div>
                 </form>
             </div>
         </div>
+
         <div class="container">
             <br>
             <table id="atributos-Servicio" class="table">
                 <thead class="thead-secondary">
                 <tr class="text-c">
                     <th scope="col">Id Servicio</th>
-                    <th scope="col">Servicio</th>
                     <th scope="col">Descripcion</th>
-                    <th scope="col">Cantidad</th>
+                    <th scope="col">Campo</th>
                     <th scope="col">Valor Unitario</th>
-                    <th scope="col">Valor total</th>
+                    <th scope="col">Estado</th>
                     <th scope="col">Editar</th>
                     <th scope="col">Borrar</th>
                 </tr>
@@ -67,6 +87,54 @@
                 </tbody>
             </table>
         </div>
+
+        <!--Modal para etitar un servicio-->
+<div class="modal fade" id="ModalServicios" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tituloModal">Agregar servicio</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="FormNuevoServicio">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="Desacrpcion" class="col-form-label">Descripcion:</label>
+                        <input type="text" class="form-control" id="Descripcion">
+                    </div>
+                    <div class="form-group">
+                        <label for="servicio" class="col-form-label">Campo:</label>
+                        <select id="Servicio" class="form-control">
+                            <option>Exámenes</option>
+                            <option>Cirugía</option>
+                            <option>Otros</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ValorUnitario" class="col-form-label">Valor unitario</label>
+                        <input type="number" class="form-control" id="ValorUnitario"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="Estado" class="col-form-label">Estado</label>
+                        <select id="Estado" class="form-control">
+                            <option>Disponible</option>
+                            <option>No Disponible</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button id="btnGuardarServicio" type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
         <!-- FIREBASE -->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -89,6 +157,8 @@
         firebase.initializeApp(firebaseConfig);
     </script>
     
+
+    <script src="https://getbootstrap.com/docs/5.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="buscar.js"></script>
 
 </body>
