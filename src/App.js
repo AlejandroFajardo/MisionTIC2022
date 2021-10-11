@@ -1,5 +1,4 @@
 import './App.css';
-import './assets/css/navbar-top-fixed.css';
 import {Route, Switch} from "react-router-dom";
 import ListadoServicios from "./components/Servicios/ListadoServicios";
 import ListadoVentas from "./components/Ventas/ListadoVentas";

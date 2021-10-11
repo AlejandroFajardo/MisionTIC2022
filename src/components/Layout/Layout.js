@@ -1,3 +1,4 @@
+import '../../assets/css/navbar-top-fixed.css';
 import Menu from "../Menu/Menu";
 
 const Layout = ({children}) => {
