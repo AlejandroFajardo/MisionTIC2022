@@ -12,9 +12,11 @@ import {
 import Layout from "../Layout/Layout";
 import {getServicios} from "../../services/Firebase/FirebaseService";
 import {NavLink} from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.css';
 
 class ListadoServicios extends React.Component {
     state = {
+        modalActualizar: false,
         ListaServicios: [],
         terminoBusqueda: null
     }
@@ -45,6 +47,9 @@ class ListadoServicios extends React.Component {
         this.setState({...this.state, terminoBusqueda: this.inputBusqueda.current.value});
     }
 
+    mostrarModalActualizar =()=> {
+        this.setState({modalActualizar: !this.state.modalActualizar});
+    }
 
     render() {
         return (
@@ -99,7 +104,7 @@ class ListadoServicios extends React.Component {
                                 <td>
                                     <Button
                                         color="primary"
-                                        onClick={() => this.mostrarModalActualizar(servicio)}
+                                        onClick={() => this.mostrarModalActualizar()}
                                     >
                                         Editar
                                     </Button>{" "}
@@ -170,7 +175,7 @@ class ListadoServicios extends React.Component {
                         >
                             Aceptar
                         </Button>
-                        <Button color="danger" onClick={() => this.cerrarModalActualizar()}>
+                        <Button color="danger" onClick={() => this.mostrarModalActualizar()}>
                             Cancelar
                         </Button>
                     </ModalFooter>
