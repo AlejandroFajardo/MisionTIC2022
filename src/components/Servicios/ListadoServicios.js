@@ -13,12 +13,20 @@ import Layout from "../Layout/Layout";
 import {getServicios} from "../../services/Firebase/FirebaseService";
 import {NavLink} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
+import firebase from "firebase/app";
 
 class ListadoServicios extends React.Component {
     state = {
         modalActualizar: false,
+        modalEditar:false,
         ListaServicios: [],
-        terminoBusqueda: null
+        terminoBusqueda: null,
+        form:{
+            id:'',
+            Descripcion:'',
+            ValorUnitario:'',
+            Estado:''
+        }
     }
     inputBusqueda = React.createRef();
 
@@ -49,6 +57,29 @@ class ListadoServicios extends React.Component {
 
     mostrarModalActualizar =()=> {
         this.setState({modalActualizar: !this.state.modalActualizar});
+    }
+
+    peticionPut=()=>{
+        alert("hola")
+        firebase.child(`servicios/${this.state.id}`).set(
+             this.state.form,
+             error=>{
+                 if(error)console.log(error)
+            });
+    }
+
+    handleChange =e=>{
+        this.setState({form:{
+            ...this.state.form,
+            [e.target.name]: e.target.value
+        }})
+        console.log(this.state.form);
+    }
+
+    seleccionarServicio = async(servicio)=>{
+        await this.setState({form: servicio});
+        this.setState({modalActualizar:true})
+        console.log(servicio.id);
     }
 
     render() {
@@ -104,7 +135,7 @@ class ListadoServicios extends React.Component {
                                 <td>
                                     <Button
                                         color="primary"
-                                        onClick={() => this.mostrarModalActualizar()}
+                                        onClick={() => this.seleccionarServicio(servicio)}
                                     >
                                         Editar
                                     </Button>{" "}
@@ -133,7 +164,7 @@ class ListadoServicios extends React.Component {
                                 className="form-control"
                                 readOnly
                                 type="text"
-                                value={this.state.Id}
+                                value={this.state.form && this.state.form.id}
                             />
                         </FormGroup>
 
@@ -144,7 +175,7 @@ class ListadoServicios extends React.Component {
                                 name="Descripción"
                                 type="text"
                                 onChange={this.handleChange}
-                                value={this.state.Descripcion}
+                                value={this.state.form && this.state.form.Descripcion}
                             />
                         </FormGroup>
 
@@ -155,7 +186,7 @@ class ListadoServicios extends React.Component {
                                 name="ValorUnitario"
                                 type="text"
                                 onChange={this.handleChange}
-                                value={this.state.ValorUnitario}
+                                value={this.state.form && this.state.form.ValorUnitario}
                             />
                         </FormGroup>
 
@@ -171,7 +202,7 @@ class ListadoServicios extends React.Component {
                     <ModalFooter>
                         <Button
                             color="primary"
-                            onClick={() => this.editar(this.state.form)}
+                            onClick={() => this.peticionPut(this.state.form)}
                         >
                             Aceptar
                         </Button>
