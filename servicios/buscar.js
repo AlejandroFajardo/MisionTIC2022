@@ -4,7 +4,9 @@ const DescripServicioBuscar = document.getElementById('descripcion-servicio');
 const btnGuardarServicio = document.getElementById('btnGuardarServicio');
 const buscarForm = document.getElementById("buscar-form");
 const tablaServicios = document.getElementById('atributos-Servicio');
+const btnGuardarModal = document.getElementById('btnGuardarServicio');
 const tBody = tablaServicios.querySelector('tbody');
+
 
 const modal = document.getElementById('ModalServicios');
 const modalServicios = bootstrap.Modal.getOrCreateInstance(modal); //Obtener el objeto de Bootstrap Modal, para poder hacer uso de funciones de utilidad
@@ -82,64 +84,6 @@ const buscarservicio = (id) => db.collection("servicios").doc(id).log("si");
  })
 
 
-
-buscarForm.addEventListener("submit", async(e) =>{
-    e.preventDefault();
-    if((idServicioBuscar.value!='') || (DescripServicioBuscar.value !='')){
-        const services = await getServicios()
-        services.forEach(doc =>{
-        const idservicio = doc.id;
-        if(idServicioBuscar.value == idservicio){
-            const descripcionServicio = doc.data().descripcion;
-            const nombreServicio = doc.data().servicio;
-            const valorUniServicio = doc.data().valorUnitario;
-            let fila = document.createElement('tr');
-            let colIdServicio= document.createElement('td');
-            colIdServicio.innerHTML=idservicio;
-            let colDescripcion= document.createElement('td');
-            colDescripcion.innerHTML = descripcionServicio;
-            let colServicio= document.createElement('td');
-            colServicio.innerHTML = nombreServicio;
-            let colValorUnitario = document.createElement('td');
-            colValorUnitario.innerHTML = valorUniServicio;
-            let colEstadoServicio = document.createElement('td');
-            colEstadoServicio.innerHTML = "Disponible";
-            let colEditar= document.createElement('td');
-            let btnEditar = document.createElement('button');
-            btnEditar.textContent = 'editar';
-            btnEditar.type = 'button';
-            btnEditar.classList.add('btn');
-            btnEditar.classList.add('btn-info');
-            btnEditar.classList.add('editar-fila');
-            btnEditar.addEventListener('click', editarFila);
-            colEditar.appendChild(btnEditar);
-            
-            let colBorrar= document.createElement('td');
-            let btnBorrar = document.createElement('button'); //Estandar y recomendada!!
-            btnBorrar.textContent = 'X';
-            btnBorrar.type = 'button';
-            btnBorrar.classList.add('btn');
-            btnBorrar.classList.add('btn-danger');
-            btnBorrar.classList.add('borrar-fila');
-            colBorrar.appendChild(btnBorrar);
-
-            fila.appendChild(colIdServicio);
-            fila.appendChild(colDescripcion);
-            fila.appendChild(colServicio);
-            fila.appendChild(colValorUnitario);
-            fila.appendChild(colEstadoServicio);
-            fila.appendChild(colEditar);
-            fila.appendChild(colBorrar);
-            
-            tBody.appendChild(fila);
-
-        }
-    })
-     idServicioBuscar.value="";
-}
-
-})
-
 function editarFila(){
     alert('El servicio se actualizo correctamente');
 }
@@ -150,6 +94,11 @@ function editarServicio(){
     txtServicio.value = datos.nombreServicio;
     txtValorUnitario.value = datos.valorUnitario;
     modalServicios.show();
-    modalServicios.show();
 }
 
+btnGuardarModal.addEventListener("click", (e) =>{
+    e.preventDefault();
+    modalServicios.hide();
+    alert('El servicio se actualizo de manera correctamente');
+
+})
