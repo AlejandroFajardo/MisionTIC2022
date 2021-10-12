@@ -13,7 +13,7 @@ const Layout = ({children}) => {
             </main>
             <footer className="my-2 pt-2 text-muted text-center text-small">
                 <p className="mb-1">&copy; 2017–2021 PDT</p>
-                <ul className="list-inline">
+                {/*<ul className="list-inline">
                     <li className="list-inline-item">
                         <a href="https://www.google.com.co/">Privacy</a>
                     </li>
@@ -23,7 +23,7 @@ const Layout = ({children}) => {
                     <li className="list-inline-item">
                         <a href="https://www.google.com.co/">Support</a>
                     </li>
-                </ul>
+                </ul>*/}
             </footer>
         </>
     )

@@ -14,12 +14,12 @@ function App() {
         <>
             <Switch>
                 <Route path="/login" component={Login}/>
-                <Route path="/servicios" component={ListadoServicios}/>
-                <Route path="/servicios/crear" component={CrearServicio}/>
                 <Route path="/servicios/editar/:service" component={EditarServicio}/>
-                <Route path="/ventas" component={ListadoVentas}/>
-                <Route path="/ventas/crear" component={CrearVenta}/>
+                <Route path="/servicios/crear" component={CrearServicio}/>
+                <Route path="/servicios" component={ListadoServicios}/>
                 <Route path="/ventas/editar/:service" component={EditarVenta}/>
+                <Route path="/ventas/crear" component={CrearVenta}/>
+                <Route path="/ventas" component={ListadoVentas}/>
                 <Route path="" component={PageNotFound}/>
             </Switch>
         </>
