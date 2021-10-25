@@ -25,4 +25,17 @@ export async function getServicios() {
   return servicios;
 }
 
+
+
+export async function getVentas() {
+  let ventas = [];
+  let respuesta1 = await db.collection('ventas').get();
+
+  respuesta1.forEach((item) => {
+      ventas.push(item.data());
+  });
+
+  return ventas;
+}
+
 export default db;
