@@ -15,7 +15,7 @@ import {
   getUsuarios,
   addUsuario,
   addUsuarioCorreo,
-} from "../../services/Firebase/FirebaseService";
+} from "../../services/Firebase/FirebaseUsuers";
 import "bootstrap/dist/css/bootstrap.css";
 
 class Login extends React.Component {

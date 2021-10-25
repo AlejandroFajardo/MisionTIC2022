@@ -15,7 +15,7 @@ import { LayoutAdministrador } from "../Layout/Layout";
 import {
   getUsuarios,
   updateUsuario,
-} from "../../services/Firebase/FirebaseService";
+} from "../../services/Firebase/FirebaseUsuers";
 import "bootstrap/dist/css/bootstrap.css";
 
 class ListadoEdicionUsuarios extends React.Component {
