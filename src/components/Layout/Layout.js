@@ -1,10 +1,10 @@
 import "../../assets/css/navbar-top-fixed.css";
 import { Menu, MenuAdministrador } from "../Menu/Menu";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, administrador }) => {
   return (
     <>
-      <Menu />
+      <Menu admin={administrador} />
 
       <main className="container">
         <div className="bg-light p-5 rounded">{children}</div>
@@ -53,5 +53,5 @@ const LayoutAdministrador = ({ children }) => {
   );
 };
 
-export default LayoutAdministrador;
-export { LayoutAdministrador, Layout };
+export default Layout;
+export { Layout, LayoutAdministrador };

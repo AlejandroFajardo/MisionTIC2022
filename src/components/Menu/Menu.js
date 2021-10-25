@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 
-const Menu = () => {
+const Menu = ({ admin }) => {
+  let administrador = admin;
   return (
     <>
       <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -30,6 +31,32 @@ const Menu = () => {
                 >
                   Ventas
                 </NavLink>
+              </li>
+              <li className="nav-item">
+                {administrador ? (
+                  <NavLink
+                    to="/servicios"
+                    className="nav-link"
+                    activeClassName="active"
+                  >
+                    Servicios
+                  </NavLink>
+                ) : (
+                  " "
+                )}
+              </li>
+              <li className="nav-item">
+                {administrador ? (
+                  <NavLink
+                    to="/usuarios/listado"
+                    className="nav-link"
+                    activeClassName="active"
+                  >
+                    Usuarios
+                  </NavLink>
+                ) : (
+                  " "
+                )}
               </li>
             </ul>
           </div>
@@ -62,20 +89,20 @@ const MenuAdministrador = () => {
             <ul className="navbar-nav me-auto mb-2 mb-md-0">
               <li className="nav-item">
                 <NavLink
-                  to="/servicios"
-                  className="nav-link"
-                  activeClassName="active"
-                >
-                  Servicios
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
                   to="/ventas"
                   className="nav-link"
                   activeClassName="active"
                 >
                   Ventas
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  to="/servicios"
+                  className="nav-link"
+                  activeClassName="active"
+                >
+                  Servicios
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -95,4 +122,4 @@ const MenuAdministrador = () => {
   );
 };
 
-export { MenuAdministrador, Menu };
+export { Menu, MenuAdministrador };

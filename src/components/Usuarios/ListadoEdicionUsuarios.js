@@ -53,6 +53,7 @@ class ListadoEdicionUsuarios extends React.Component {
         this.state.form.Estado = user.data().state;
       }
     });
+    console.log(this.state.administrador);
   };
 
   peticionPut = async (usuario) => {
@@ -122,7 +123,6 @@ class ListadoEdicionUsuarios extends React.Component {
             </tbody>
           </Table>
         </Container>
-
         <Modal isOpen={this.state.modalActualizar}>
           <ModalHeader>
             <Container>

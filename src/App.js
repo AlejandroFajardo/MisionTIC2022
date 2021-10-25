@@ -22,8 +22,8 @@ function App() {
         <Route path="/ventas/crear" component={CrearVenta} />
         <Route path="/ventas" component={ListadoVentas} />
         <Route path="/usuarios/listado" component={ListadoEdicionUsuarios} />
-        <Route path="" component={Login} />
         <Route path="/error" component={PageNotFound} />
+        <Route path="" component={Login} />
       </Switch>
     </>
   );

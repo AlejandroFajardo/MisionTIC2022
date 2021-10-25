@@ -49,7 +49,7 @@ class Login extends React.Component {
       await addUsuario(
         response.profileObj.email,
         response.profileObj.googleId,
-        " ",
+        "Vendedor",
         "Inactivo"
       );
       alert(
@@ -58,13 +58,24 @@ class Login extends React.Component {
       );
       this.loadUsuarios();
     } else {
-      if (!userStatus === "Inactivo") {
-        alert("Correcto");
-        window.location.href = "/usuarios/listado";
+      if (!(userStatus === "Inctivo")) {
+        if (userRole === "Vendedor") {
+          alert("Correcto");
+          window.location.href = "/ventas?administrador=false";
+        } else {
+          alert("Correcto");
+          window.location.href = "/ventas?administrador=true";
+        }
       } else {
         alert("Usuario inactivo");
       }
     }
+  };
+
+  negativeresponseGoogle = async (response) => {
+    alert(
+      "No se pudo acceder a la cuenta de google " + response.profileObj.email
+    );
   };
 
   handleChange = (e) => {
@@ -73,7 +84,8 @@ class Login extends React.Component {
     });
   };
 
-  handleClick = async () => {
+  handleClick = async (e) => {
+    e.preventDefault();
     console.log(this.state.Email);
     console.log(this.state.Password);
     let userRole = "";
@@ -93,19 +105,25 @@ class Login extends React.Component {
       await addUsuarioCorreo(
         this.state.Email,
         this.state.Password,
-        " ",
+        "Vendedor",
         "Inactivo"
       );
-      alert("Usuario no existente, Se agrego el usuario ", this.state.Email);
-      // this.loadUsuarios();
+      alert("Usuario no existente, Se agrego el usuario " + this.state.Email);
+      this.loadUsuarios();
     } else {
       console.log(userStatus);
-      if (userStatus === "Activo") {
-        alert("Correcto");
+      if (!(userStatus === "Inactivo")) {
         if (this.state.Password === password) {
+          if (userRole === "Vendedor") {
+            alert("Correcto");
+            window.location.href = "/ventas?administrador=false";
+          } else {
+            alert("Correcto");
+            window.location.href = "/ventas?administrador=true";
+          }
+        } else {
           alert("error de contra");
         }
-        window.location.href = "/usuarios/listado";
       } else {
         alert("Usuario inactivo");
       }
@@ -116,7 +134,7 @@ class Login extends React.Component {
     return (
       <LoginLayout>
         <Container>
-          <Form id="signInForm">
+          <Form id="signInForm" onSubmit={this.handleClick}>
             <Row>
               <FormGroup>
                 <Input
@@ -147,8 +165,9 @@ class Login extends React.Component {
                 <Button
                   color="primary"
                   id="signInBtn"
+                  type="submit"
                   sm={6}
-                  onClick={this.handleClick}
+                  //onClick={this.handleClick}
                 >
                   Acceder
                 </Button>

@@ -9,7 +9,7 @@ import {
   FormGroup,
   ModalFooter,
 } from "reactstrap";
-import Layout from "../Layout/Layout";
+import { LayoutAdministrador } from "../Layout/Layout";
 import { getServicios } from "../../services/Firebase/FirebaseService";
 import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
@@ -91,7 +91,7 @@ class ListadoServicios extends React.Component {
 
   render() {
     return (
-      <Layout>
+      <LayoutAdministrador>
         <Container>
           <div className="container p-4">
             <h2>
@@ -230,7 +230,7 @@ class ListadoServicios extends React.Component {
             </Button>
           </ModalFooter>
         </Modal>
-      </Layout>
+      </LayoutAdministrador>
     );
   }
 }
