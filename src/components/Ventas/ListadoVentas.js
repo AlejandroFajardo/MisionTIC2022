@@ -109,7 +109,7 @@ class ListadoVentas extends React.Component {
               <h2>
                 <center>Lista de Ventas</center>
               </h2>
-              <NavLink to={"/servicios/crear"}>Crear venta</NavLink>
+              <NavLink to={"/ventas/crear"}>Crear venta</NavLink>
               <div className="row">
                 <div className="col-md-6">
                   <form id="buscar-form" onSubmit={this.actualizarFiltro}>
