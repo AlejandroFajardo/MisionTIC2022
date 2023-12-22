@@ -19,7 +19,7 @@ googleButton.addEventListener("click", (e) => {
     .then((result) => {
       console.log(result);
       alert("Correcto");
-      window.location.href = "/vistas/vista_usuario.html";
+      window.location.href = "https://github.com/AlejandroFajardo/MisionTIC2022/vistas/vista_usuario.html";
     })
     .catch((err) => {
       alert("error");
@@ -45,7 +45,7 @@ signInForm.addEventListener("submit", async (e) => {
           window.location.href = "/vistas/vista_administrador.html";
           login = true;
         } else if (user.data().role == "Vendedor") {
-          window.location.href = "/vistas/vista_vendedor.html";
+          window.location.href = "https://github.com/AlejandroFajardo/MisionTIC2022/vistas/vista_vendedor.html";
           login = true;
         } else {
         }
